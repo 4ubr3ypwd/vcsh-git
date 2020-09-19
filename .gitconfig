@@ -14,8 +14,8 @@
 	gi              = gui
 	gi              = gui
 	gui             = tower
-	tower           = "! /bin/sh $HOME/.gitfiles/scripts/tower.sh"
-	towerlog        = "! /bin/sh $HOME/.gitfiles/scripts/towerlog.sh"
+	tower           = "! /bin/sh $HOME/.gitscripts/tower.sh"
+	towerlog        = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
 	glog            = towerlog
 	vlog            = log --oneline --decorate --graph
 
