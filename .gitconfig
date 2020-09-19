@@ -1,0 +1,80 @@
+[alias]
+	smergelog       = "! smerge -n search 'after:\"1960-01-01\"'"
+	smergegui       = "! smerge -n ./"
+	co              = checkout
+	clear           = clean -df
+	head            = reset --hard
+	s               = status
+	stat            = status
+	ci              = commit --verbose
+	cia             = commit -a --verbose
+	cim             = commit -m --verbose
+	ciam            = commit -am --verbose
+	ciav            = commit -a --verbose
+	gi              = gui
+	gi              = gui
+	gui             = tower
+	tower           = "! /bin/sh /Users/aubreypwd/.config/symlinked/Git/tower.sh"
+	towerlog        = "! /bin/sh /Users/aubreypwd/.config/symlinked/Git/towerlog.sh"
+	glog            = towerlog
+	vlog            = log --oneline --decorate --graph
+
+[push]
+	default = current # Pretty sure this makes sure to push the current branch on git push.
+
+[user]
+	name = Aubrey Portwood
+	email = code@aubreypwd.com
+
+[core]
+	editor = subl -w # Write my commits using sublime.
+
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
+
+[credential]
+	helper = osxkeychain
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[color "status"]
+	added = green
+	changed = red bold
+	untracked = magenta bold
+
+[color "branch"]
+	remote = yellow
+
+[gui]
+	tabsize = 2
+
+[diff]
+	noprefix = true
+
+[pager]
+	diff = false
+	show = false
+
+[mergetool "smerge"] # Sublime Merge as mergetool
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+
+[merge]
+	tool = smerge
+
+[mergetool]
+	keepBackup = false
+
+[pull]
+	rebase = false
