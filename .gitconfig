@@ -14,8 +14,8 @@
 	gi              = gui
 	gi              = gui
 	gui             = tower
-	tower           = "! /bin/sh /Users/aubreypwd/.config/symlinked/Git/tower.sh"
-	towerlog        = "! /bin/sh /Users/aubreypwd/.config/symlinked/Git/towerlog.sh"
+	tower           = "! /bin/sh $HOME/.gitfiles/scripts/tower.sh"
+	towerlog        = "! /bin/sh $HOME/.gitfiles/scripts/towerlog.sh"
 	glog            = towerlog
 	vlog            = log --oneline --decorate --graph
 
