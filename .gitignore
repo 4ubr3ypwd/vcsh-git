@@ -1,7 +1,4 @@
-wp-config.php
-.htaccess
-wp-content/uploads/
-wp-content/debug.log
-.DS_Store
+DS_*
 /vendor/
 /node_modules/
+wp-config.php
