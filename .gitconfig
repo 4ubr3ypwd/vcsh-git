@@ -21,6 +21,8 @@
 	blog            = log --oneline --decorate --graph # Better log.
 
 	startover       = "! git reset --hard head && git clear" # Reset and clear.
+	r               = reset --hard HEAD
+	rso             = "! git r && git startover"
 
 	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	pom             = push origin master
