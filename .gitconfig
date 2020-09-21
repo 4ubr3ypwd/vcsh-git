@@ -1,26 +1,29 @@
 [alias]
 	smergelog       = "! smerge -n search 'after:\"1960-01-01\"'"
 	smergegui       = "! smerge -n ./"
+
 	co              = checkout
 	clear           = clean -df
-	head            = reset --hard
 	s               = status
-	stat            = status
-	ci              = commit --verbose
-	cia             = commit -a --verbose
-	cim             = commit -m --verbose
-	ciam            = commit -am --verbose
-	ciav            = commit -a --verbose
-	gi              = gui
-	gi              = gui
-	gui             = tower
+
+	ci              = commit --verbose # Commit
+	cim             = commit -m --verbose # Commit with message with verbose info.
+	cia             = commit -a --verbose # Commit add all.
+	ciam            = commit -am --verbose # Commit, add all, with message, with verbose info.
+
 	tower           = "! /bin/sh $HOME/.gitscripts/tower.sh"
 	towerlog        = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
-	glog            = towerlog
-	vlog            = log --oneline --decorate --graph
+
+	gui             = tower
+	gi              = gui
+
+	glog            = towerlog # Graphical log.
+	blog            = log --oneline --decorate --graph # Better log.
+
+	startover       = "! git reset --hard head && git clear" # Reset and clear.
 
 [push]
-	default = current # Pretty sure this makes sure to push the current branch on git push.
+	default = current
 
 [user]
 	name = Aubrey Portwood
