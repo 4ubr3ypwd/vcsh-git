@@ -20,7 +20,7 @@
 
 	startover       = "! git reset --hard head && git clear" # Reset and clear.
 	rhh             = reset --hard HEAD
-	rso             = "! git rhh && git startover"
+	rhhc            = "! git rhh && git clear"
 
 	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	pom             = push origin master
