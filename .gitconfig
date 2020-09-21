@@ -22,7 +22,7 @@
 
 	startover       = "! git reset --hard head && git clear" # Reset and clear.
 
-	p               = push
+	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	pom             = push origin master
 
 [push]
