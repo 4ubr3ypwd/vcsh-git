@@ -24,6 +24,8 @@
 
 	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	pom             = push origin master
+	pcia            = "! git cia && git p"
+	pci             = "! git ci && git p"
 
 [push]
 	default = current
