@@ -36,6 +36,7 @@
 
 [core]
 	editor = subl -w # Write my commits using sublime.
+	excludesfile = /Users/aubreypwd/.gitignore
 
 [color]
 	ui = true
