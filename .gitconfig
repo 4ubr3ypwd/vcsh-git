@@ -35,7 +35,7 @@
 	email = code@aubreypwd.com
 
 [core]
-	editor = subl -w # Write my commits using sublime.
+	editor = subl -n -w # Write my commits using sublime.
 	excludesfile = /Users/aubreypwd/.gitignore
 
 [color]
