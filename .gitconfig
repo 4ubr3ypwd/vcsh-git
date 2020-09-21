@@ -22,6 +22,9 @@
 
 	startover       = "! git reset --hard head && git clear" # Reset and clear.
 
+	p               = push
+	pom             = push origin master
+
 [push]
 	default = current
 
