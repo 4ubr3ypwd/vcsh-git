@@ -7,9 +7,7 @@
 	s               = status
 
 	ci              = commit --verbose # Commit
-	cim             = commit -m --verbose # Commit with message with verbose info.
 	cia             = commit -a --verbose # Commit add all.
-	ciam            = commit -am --verbose # Commit, add all, with message, with verbose info.
 
 	tower           = "! /bin/sh $HOME/.gitscripts/tower.sh"
 	towerlog        = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
