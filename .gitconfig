@@ -1,31 +1,31 @@
 [alias]
-	smergelog       = "! smerge -n search 'after:\"1960-01-01\"'"
-	smergegui       = "! smerge -n ./"
-
-	co              = checkout
-	clear           = clean -df
-	s               = status
-
-	ci              = commit --verbose # Commit
-	cia             = commit -a --verbose # Commit add all.
-
 	tower           = "! /bin/sh $HOME/.gitscripts/tower.sh"
 	towerlog        = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
 
+	co              = checkout
+	clear           = clean -df
+
+	s               = status
+
+	c               = commit --verbose # Commit with verbose messaging in editor.
+	ci              = c
+	cia             = commit -a --verbose # Commit add all with verbose messaging in editor.
+
+	g               = gui
 	gui             = tower
-	gi              = gui
 
+	l               = blog # Normal log, but looks better.
+	gl              = glog # Graphical UI log.
 	glog            = towerlog # Graphical log.
-	blog            = log --oneline --decorate --graph # Better log.
+	blog            = log --oneline --decorate --graph # Better log, looks better in CLI.
 
-	startover       = "! git reset --hard head && git clear" # Reset and clear.
-	rhh             = reset --hard HEAD
-	rhhc            = "! git rhh && git clear"
+	r               = rhh
+	rc              = rhhc
+	rhh             = reset --hard HEAD # Reset easily.
+	rhhc            = "! git rhh && git clear" # Reset and remove new files.
 
 	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	pom             = push origin master
-	pcia            = "! git cia && git p"
-	pci             = "! git ci && git p"
 
 [push]
 	default = current
