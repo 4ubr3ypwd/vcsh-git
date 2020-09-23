@@ -10,6 +10,7 @@
 	c               = commit --verbose # Commit with verbose messaging in editor.
 	ci              = c
 	cia             = commit -a --verbose # Commit add all with verbose messaging in editor.
+	cp              = "! git commit -am 'Commit changes.' && git p"
 
 	g               = gui
 	gui             = tower
