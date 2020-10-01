@@ -32,7 +32,7 @@
 	db              = "! function db() { git branch -D $1; git push origin :$1 ;}; db"
 	dt              = "! function dt() { git tag -d $1; git push origin :refs/tags/$1; }; dt"
 
-	fb              = ! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'
+	fb              = ! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch' # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
 
 [push]
 	default = current
