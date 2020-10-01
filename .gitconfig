@@ -16,17 +16,21 @@
 	gui             = tower
 
 	l               = blog # Normal log, but looks better.
-	gl              = glog # Graphical UI log.
 	glog            = towerlog # Graphical log.
 	blog            = log --oneline --decorate --graph # Better log, looks better in CLI.
 
 	r               = rhh
-	rc              = rhhc
 	rhh             = reset --hard HEAD # Reset easily.
 	rhhc            = "! git rhh && git clear" # Reset and remove new files.
 
-	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
-	pom             = push origin master
+	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
+	u               = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
+
+	b               = "! echo $(git branch --show-current)" # Show the current branch.
+	cb              = "! git b | pbcopy" # Copy the current branch to the clipboard.
+
+	db              = "! function db() { git branch -D $1; git push origin :$1 ;}; db "
+	dt              = "! function dt() { git tag -d $1; git push origin :refs/tags/$1; }; dt"
 
 [push]
 	default = current
