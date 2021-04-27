@@ -10,7 +10,7 @@
 	cia             = commit -a --verbose # Commit add all with verbose messaging in editor.
 	cp              = "! git commit -am 'Commit changes.' && git p"
 	g               = gui
-	gui             = smerge
+	gui             = tower
 	l               = blog # Normal log, but looks better.
 	glog            = towerlog # Graphical log.
 	blog            = log --oneline --decorate --graph # Better log, looks better in CLI.
