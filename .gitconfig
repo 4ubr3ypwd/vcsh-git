@@ -26,6 +26,7 @@
 	fb              = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
 	mt              = "! function mt() { git dt $1; git tag $1; git push --tags; }; mt"
 	pr              = "! gh pr $2 $3 $4 $5 $6 $7 $8 $9"
+	diffs            = diff --staged
 
 [push]
 	default = current
