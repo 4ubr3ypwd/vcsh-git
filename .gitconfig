@@ -21,7 +21,7 @@
 
 	# Comitting w/out editor.
 	csm      = commit --verbose -m # Commit staged files with a message.
-	csmp     = "! function f() { git commit --verbose -m "$1" && git p; }; f" # Commit staged files (and push).
+	csmp     = "! function f() { git commit --verbose -m '$1' && git p; }; f" # Commit staged files (and push).
 	
 	## Committing w/out editor (all files/add).
 	cam      = commit --verbose -am  # Commit all files with message
