@@ -1,5 +1,4 @@
 [alias]
-	a        = git add # add
 
 	# GUI's
 	gui      = "! /bin/sh $HOME/.gitscripts/tower.sh"
@@ -13,17 +12,19 @@
 	# Checkout.
 	co       = checkout
 
-	# Committing in an editor.
-	cae      = commit -a --verbose # Commit all files (in editor).
-	caep     = "! function f() { git commit --verbose -a && git p; }; f" # Add all files and push.
-	cse      = commit --verbose # Commit staged in an editor.
-	csep     = "! function f() { git commit --verbose && git p; }; f" # Commit staged in an editor and push.
+	# Committing (in an editor).
 
-	# Comitting with a message.
-	cam      = commit -a --verbose -m # Commit with a message.
-	camp     = "! function f() { git commit --verbose -a -m '$1' && git p; }; f" # Add all files and push.
-	csm      = commit --verbose -m # Commit staged with message.
-	csmp     = "! function f() { git commit --verbose -m '$1' && git p; }; f" # Commit staged files and push. 
+	### All changes.
+	ca      = commit -a --verbose # Commit and add all files.
+	cap     = "! function f() { git commit --verbose -a && git p; }; f" # Add all files, commit and push and push.
+	
+	## Interactively
+	#ci      = "! function f() { git add -i && git commit --verbose; }; f" # Add staged files and only commit those.
+	#cip     = "! function f() { git add -i && git commit --verbose && git p; }; f" # Add staged files, commit those, and push.
+	
+	## Staged
+	cs      = commit --verbose # Commit staged
+	csp     = "! function f() { git commit --verbose && git p; }; f" # commit staged and push.
 
 	# Status
 	stat     = status
