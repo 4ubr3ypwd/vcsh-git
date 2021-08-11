@@ -16,7 +16,9 @@
 	c        = commit --verbose # Commit (in editor).
 	ca       = commit -a --verbose # Commit all files (in editor).
 	cap      = "! function f() { git commit --verbose -a && git p; }; f" # Add all files and push.
-	
+	cam      = commit -a --verbose -m # Commit with a message.
+	camp     = "! function f() { git commit --verbose -a -m '$1' && git p; }; f" # Add all files and push.
+
 	# Status
 	stat     = status
 	s        = status
@@ -36,6 +38,7 @@
 
 	# Branches & Tags
 	b        = "! echo $(git branch --show-current)" # Show the current branch.
+	cob      = checkout -b
 	cb       = "! git b | pbcopy" # Copy the current branch to the clipboard.
 	db       = "! function f() { git branch -D $1; git push origin :$1 ;}; f"
 	dt       = "! function f() { git tag -d $1; git push origin :refs/tags/$1; }; f"
