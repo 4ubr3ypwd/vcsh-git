@@ -17,7 +17,7 @@
 
 	# Commiting.
 	ca       = commit -a --verbose
-	cam      = commit -am --verbose # Commit all files with message
+	cam      = commit -a --verbose -m  # Commit all files with message
 	camp     = "! function camp() { git commit -am '$1' && git p; }; camp" # Commit all files and push.
 
 	# Status
