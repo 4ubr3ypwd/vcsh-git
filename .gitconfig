@@ -1,59 +1,65 @@
 [alias]
 
 	# GUI's
-	towerlog        = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
-	towerl          = towerlog
-	tower           = "! /bin/sh $HOME/.gitscripts/tower.sh"
-	t               = tower
-	gui             = tower
-	g               = gui
+	towerlog = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
+	towerl   = towerlog
+
+	tower    = "! /bin/sh $HOME/.gitscripts/tower.sh"
+		t        = tower
+		gui      = tower
+		g        = gui
 
 	# Sublime Merge.
-	smerge          = "! '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ."
+	smerge   = "! '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ."
 
-	co              = checkout
+	# Checkout.
+	co       = checkout
 
 	# Commiting.
-	cv               = commit --verbose # Commit with verbose messaging in editor.
-	cva              = commit -a --verbose # Commit add all with verbose messaging in editor.
-	cp              = "! function cp() { git commit -am '$1' && git p }; cp" # Commit and push.
+	ca       = commit -a --verbose
+	cam      = commit -am --verbose # Commit all files with message
+	camp     = "! function camp() { git commit -am '$1' && git p; }; camp" # Commit all files and push.
 
 	# Status
-	stat            = status
-	s               = status
+	stat     = status
+	s        = status
 
 	# Logs
-	llog            = log --oneline --decorate --graph # Better log, looks better in CLI.
-	l               = llog # Normal log, but looks better.
-	tl              = tower-log
-	tlog            = tower-log # Graphical log.
+	llog     = log --oneline --decorate --graph # Better log, looks better in CLI.
+		l        = llog # Normal log, but looks better.
+
+	# GUI log (tower).
+	tl       = towerlog
+		gl     = towerlog
+	tlog     = towerlog
+		glog   = towerlog
 
 	# Reset & Clear
-	rhh             = reset --hard HEAD # Reset easily.
-	rhhc            = "! git rhh && git clear" # Reset and remove new files.
-	clear           = clean -df # Just remove new files
+	rhh      = reset --hard HEAD # Reset easily.
+	rhhc    = "! git rhh && git clear" # Reset and remove new files.
+	clear    = clean -df # Just remove new files
 
 	# Push/Pull
-	p               = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
-	u               = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
+	p        = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
+	u        = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
 
 	# Branches
-	b               = "! echo $(git branch --show-current)" # Show the current branch.
-	cb              = "! git b | pbcopy" # Copy the current branch to the clipboard.
-	db              = "! function db() { git branch -D $1; git push origin :$1 ;}; db"
-	dt              = "! function dt() { git tag -d $1; git push origin :refs/tags/$1; }; dt"
-	fb              = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
+	b        = "! echo $(git branch --show-current)" # Show the current branch.
+	cb       = "! git b | pbcopy" # Copy the current branch to the clipboard.
+	db       = "! function db() { git branch -D $1; git push origin :$1 ;}; db"
+	dt       = "! function dt() { git tag -d $1; git push origin :refs/tags/$1; }; dt"
+	fb       = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
 
 	# Tags
-	mt              = "! function mt() { git dt $1; git tag $1; git push --tags; }; mt" # Move tag here.
+	mt       = "! function mt() { git dt $1; git tag $1; git push --tags; }; mt" # Move tag here.
 
 	# gh
-	pr              = "! gh pr $2 $3 $4 $5 $6 $7 $8 $9"
+	pr       = "! gh pr $2 $3 $4 $5 $6 $7 $8 $9"
 
 	# DIFFs
-	d               = diff
-	diffs           = diff --staged
-	ds              = diffs
+	d        = diff
+	diffs    = diff --staged
+	ds       = diffs
 
 [push]
 	default = current
