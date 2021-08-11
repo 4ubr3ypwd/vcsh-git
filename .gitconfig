@@ -18,6 +18,8 @@
 	cap      = "! function f() { git commit --verbose -a && git p; }; f" # Add all files and push.
 	cam      = commit -a --verbose -m # Commit with a message.
 	camp     = "! function f() { git commit --verbose -a -m '$1' && git p; }; f" # Add all files and push.
+	cmp      = "! function f() { git commit --verbose -m '$1' && git p; }; f" # Commit staged files and push. 
+	cm       = commit --verbose -m # Commit staged with message.
 
 	# Status
 	stat     = status
