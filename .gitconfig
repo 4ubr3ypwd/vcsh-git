@@ -15,10 +15,17 @@
 	# Checkout.
 	co       = checkout
 
-	# Commiting.
-	ca       = commit -a --verbose
-	cam      = commit -a --verbose -m  # Commit all files with message
-	camp     = "! function camp() { git commit -am '$1' && git p; }; camp" # Commit all files and push.
+	# Committing.
+	c        = commit --verbose # Commit (in editor).
+	ca       = commit -a --verbose # Commit all files (in editor).
+
+	# Comitting w/out editor.
+	csm      = commit --verbose -m # Commit staged files with a message.
+	csmp     = "! function f() { git commit --verbose -m "$1" && git p; }; f" # Commit staged files (and push).
+	
+	## Committing w/out editor (all files/add).
+	cam      = commit --verbose -am  # Commit all files with message
+	camp     = "! function f() { git commit --verbose -am '$1' && git p; }; f" # Commit all files (and push).
 
 	# Status
 	stat     = status
@@ -43,15 +50,13 @@
 	p        = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
 	u        = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
 
-	# Branches
+	# Branches & Tags
 	b        = "! echo $(git branch --show-current)" # Show the current branch.
 	cb       = "! git b | pbcopy" # Copy the current branch to the clipboard.
-	db       = "! function db() { git branch -D $1; git push origin :$1 ;}; db"
-	dt       = "! function dt() { git tag -d $1; git push origin :refs/tags/$1; }; dt"
+	db       = "! function f() { git branch -D $1; git push origin :$1 ;}; f"
+	dt       = "! function f() { git tag -d $1; git push origin :refs/tags/$1; }; f"
 	fb       = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
-
-	# Tags
-	mt       = "! function mt() { git dt $1; git tag $1; git push --tags; }; mt" # Move tag here.
+	mt       = "! function f() { git dt $1; git tag $1; git push --tags; }; f" # Move tag here.
 
 	# DIFFs
 	d        = diff
