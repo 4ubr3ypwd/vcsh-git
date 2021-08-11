@@ -18,13 +18,13 @@
 	ca      = commit -a --verbose # Commit and add all files.
 	cap     = "! function f() { git commit --verbose -a && git p; }; f" # Add all files, commit and push and push.
 	
-	## Interactively
-	#ci      = "! function f() { git add -i && git commit --verbose; }; f" # Add staged files and only commit those.
-	#cip     = "! function f() { git add -i && git commit --verbose && git p; }; f" # Add staged files, commit those, and push.
-	
 	## Staged
 	cs      = commit --verbose # Commit staged
 	csp     = "! function f() { git commit --verbose && git p; }; f" # commit staged and push.
+
+	## All w/ Message
+	cam     = "! function f() { git ca -m '$1'; }; f" # Commit all with a message.
+	camp    = "! function f() { git ca -m '$1' && git p; }; f"
 
 	# Status
 	stat     = status
