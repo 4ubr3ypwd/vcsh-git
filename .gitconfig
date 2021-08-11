@@ -53,9 +53,6 @@
 	# Tags
 	mt       = "! function mt() { git dt $1; git tag $1; git push --tags; }; mt" # Move tag here.
 
-	# gh
-	pr       = "! gh pr $2 $3 $4 $5 $6 $7 $8 $9"
-
 	# DIFFs
 	d        = diff
 	diffs    = diff --staged
