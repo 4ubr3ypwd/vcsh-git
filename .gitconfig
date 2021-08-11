@@ -1,13 +1,10 @@
 [alias]
 
 	# GUI's
-	towerlog = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
-	towerl   = towerlog
-
-	tower    = "! /bin/sh $HOME/.gitscripts/tower.sh"
-	t        = tower
-	gui      = tower
+	gui      = "! /bin/sh $HOME/.gitscripts/tower.sh"
 	g        = gui
+	glog     = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
+	gl       = glog
 
 	# Sublime Merge.
 	smerge   = "! '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ."
@@ -18,28 +15,15 @@
 	# Committing.
 	c        = commit --verbose # Commit (in editor).
 	ca       = commit -a --verbose # Commit all files (in editor).
-
-	# Comitting w/out editor.
-	csm      = commit --verbose -m # Commit staged files with a message.
-	csmp     = "! function f() { git commit --verbose -m '$1' && git p; }; f" # Commit staged files (and push).
+	cap      = "! function f() { git commit --verbose -a && git p; }; f" # Add all files and push.
 	
-	## Committing w/out editor (all files/add).
-	cam      = commit --verbose -am  # Commit all files with message
-	camp     = "! function f() { git commit --verbose -am '$1' && git p; }; f" # Commit all files (and push).
-
 	# Status
 	stat     = status
 	s        = status
 
 	# Logs
-	llog     = log --oneline --decorate --graph # Better log, looks better in CLI.
-	l        = llog # Normal log, but looks better.
-
-	# GUI log (tower).
-	tl       = towerlog
-	gl       = towerlog
-	tlog     = towerlog
-	glog     = towerlog
+	blog     = log --oneline --decorate --graph # Better log, looks better in CLI.
+	l        = blog # Normal log, but looks better.
 
 	# Reset & Clear
 	rhh      = reset --hard HEAD # Reset easily.
@@ -59,9 +43,9 @@
 	mt       = "! function f() { git dt $1; git tag $1; git push --tags; }; f" # Move tag here.
 
 	# DIFFs
-	d        = diff
 	diffs    = diff --staged
 	ds       = diffs
+	d        = diff
 
 [push]
 	default = current
