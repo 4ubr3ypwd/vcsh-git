@@ -1,57 +1,57 @@
 [alias]
 
 	# GUI's
-	gui      = "! /bin/sh $HOME/.gitscripts/tower.sh"
-	g        = gui
-	glog     = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
-	gl       = glog
+	gui    = "! /bin/sh $HOME/.gitscripts/tower.sh"
+	g      = gui
+	glog   = "! /bin/sh $HOME/.gitscripts/towerlog.sh"
+	gl     = glog
 
 	# Sublime Merge.
-	smerge   = "! '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ."
+	smerge = "! '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ."
 
 	# Checkout.
-	co       = checkout
+	co     = checkout
 
-	ca      = commit -a --verbose # Commit and add all files and add message to editor.
-	cap     = "! function f() { git ca && git p; }; f" # Commit all files, add message in editor, and push.
-	cam     = "! function f() { git ca -m '$1'; }; f" # Commit all with a message.
-	camp    = "! function f() { git ca -m '$1' && git p; }; f" # Commit all with a message and push.
+	ca     = commit -a --verbose # Commit and add all files and add message to editor.
+	cap    = "! function f() { git ca && git p; }; f" # Commit all files, add message in editor, and push.
+	cam    = "! function f() { git ca -m '$1'; }; f" # Commit all with a message.
+	camp   = "! function f() { git ca -m '$1' && git p; }; f" # Commit all with a message and push.
 
-	cs      = commit --verbose # Commit staged files and write message in editor.
-	csp     = "! function f() { git cs && git p; }; f" # Commit staged files, write a message in an editor, and push.
-	csm      = "! function f() { git cs -m '$1'; }; f" # Commit staged with a message.
-	csmp     = "! function f() { git csm '$1' && git p; }; f" # Commit staged with a message and push.
+	cs     = commit --verbose # Commit staged files and write message in editor.
+	csp    = "! function f() { git cs && git p; }; f" # Commit staged files, write a message in an editor, and push.
+	csm    = "! function f() { git cs -m '$1'; }; f" # Commit staged with a message.
+	csmp   = "! function f() { git csm '$1' && git p; }; f" # Commit staged with a message and push.
 
 	# Status
-	stat     = status
-	s        = status
+	stat   = status
+	s      = status
 
 	# Logs
-	blog     = log --oneline --decorate --graph # Better log, looks better in CLI.
-	l        = blog # Normal log, but looks better.
+	blog   = log --oneline --decorate --graph # Better log, looks better in CLI.
+	l      = blog # Normal log, but looks better.
 
 	# Reset & Clear
-	rhh      = reset --hard HEAD # Reset easily.
-	rhhc     = "! git rhh && git clear" # Reset and remove new files.
-	clear    = clean -df # Just remove new files
+	rhh    = reset --hard HEAD # Reset easily.
+	rhhc   = "! git rhh && git clear" # Reset and remove new files.
+	clear  = clean -df # Just remove new files
 
 	# Push/Pull
-	p        = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
-	u        = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
+	p      = "! git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git push current branch.
+	u      = "! git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"" # git pull current branch.
 
 	# Branches & Tags
-	b        = "! echo $(git branch --show-current)" # Show the current branch.
-	cob      = checkout -b
-	cb       = "! git b | pbcopy" # Copy the current branch to the clipboard.
-	db       = "! function f() { git branch -D $1; git push origin :$1 ;}; f"
-	dt       = "! function f() { git tag -d $1; git push origin :refs/tags/$1; }; f"
-	fb       = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
-	mt       = "! function f() { git dt $1; git tag $1; git push --tags; }; f" # Move tag here.
+	b      = "! echo $(git branch --show-current)" # Show the current branch.
+	cob    = checkout -b
+	cb     = "! git b | pbcopy" # Copy the current branch to the clipboard.
+	db     = "! function f() { git branch -D $1; git push origin :$1 ;}; f"
+	dt     = "! function f() { git tag -d $1; git push origin :refs/tags/$1; }; f"
+	fb     = "! /bin/bash -c 'source $HOME/.antigen/bundles/aubreypwd/zsh-plugin-fzf-git-branch/fzf-git-branch.plugin.zsh && fzf-git-branch'" # See https://github.com/aubreypwd/zsh-plugin-fzf-git-branch
+	mt     = "! function f() { git dt $1; git tag $1; git push --tags; }; f" # Move tag here.
 
 	# DIFFs
-	diffs    = diff --staged
-	ds       = diffs
-	d        = diff
+	diffs  = diff --staged
+	ds     = diffs
+	d      = diff
 
 [push]
 	default = current
